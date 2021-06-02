@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
-import { axiosData } from "../initialData";
+import { coinGecko } from "../initialData";
 
 function useCoin (initAry) {
   const [coinData, setCoinData] = useState(initAry);
 
   useEffect(() => {
-    axios.get(axiosData.baseURL)
+    coinGecko.get("")
       .then(res => setCoinData(res.data))
       .catch(err => console.log(err));
   }, []);
